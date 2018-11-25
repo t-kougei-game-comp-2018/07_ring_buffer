@@ -2,13 +2,13 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-// キューの定義
+
 typedef struct {
 	int front, rear, count, size;
 	int *buff;
 } Queue;
 
-// キューの生成
+
 Queue *make_queue(int n)
 {
 	Queue *que = malloc(sizeof(Queue));
@@ -27,19 +27,19 @@ Queue *make_queue(int n)
 }
 
 
-// キューは満杯か
+
 bool is_full(Queue *que)
 {
 	return que->count == que->size;
 }
 
-// キューは空か
+
 bool is_empty(Queue *que)
 {
 	return que->count == 0;
 }
 
-// データの挿入
+
 bool enqueue(Queue *que,int x)
 {
 	if (is_full(que)) return false;
@@ -50,7 +50,7 @@ bool enqueue(Queue *que,int x)
 	return true;
 }
 
-// データを取り出す
+
 int dequeue(Queue *que, bool *err)
 {
 	if (is_empty(que)) {
@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
 
 			if (b<10) {
 				if (1 <= i && i <= 100) {
-					enqueue(que, i);//入力
+					enqueue(que, i);
 					b++;
 				}
 
@@ -86,17 +86,18 @@ int main(int argc, char *argv[])
 		
 
 			if (i == -1) {
-				printf("%d\n", dequeue(que, &err));//取り出し
+				printf("%d\n", dequeue(que, &err));
 				for (j = 0; j < que->rear - 1; j++) {
 					que->buff[j] = que->buff[j + 1];
 				}
 				b--;
 				que->rear--;
+				que->front--;
 			}
 
 		if (i == 0) {
 			for (j = 0; j < que->rear; j++) {
-				printf("%d", que->buff[j]);//表示
+				printf("%d", que->buff[j]);
 				if (j<que->rear-1) {
 					printf(",");
 				}
