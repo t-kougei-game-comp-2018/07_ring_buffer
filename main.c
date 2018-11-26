@@ -3,7 +3,7 @@
 int main(int argc, char *argv[]) 
 {
     char str[7];
-    
+    int x,*m,*u
     while(fgets(str, sizeof(str), stdin)){
         printf("%s", str);
     }
