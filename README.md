@@ -16,7 +16,7 @@
 
 # テスト結果
 
-[![Build Status](https://travis-ci.org/t-kougei-game-comp-2018/07_ring_buffer.svg?branch=master)](https://travis-ci.org/t-kougei-game-comp-2018/07_ring_buffer)
+[![Build Status](https://travis-ci.org/Narita1910/07_ring_buffer.svg?branch=master)](https://travis-ci.org/Narita1910/07_ring_buffer)
 
 # 今回の問題
 
