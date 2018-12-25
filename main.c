@@ -81,14 +81,20 @@ void show(queue *q)
 		printf("\n");
 		return;
 	}
-	int i;
+	int i, c = 0;
 	for (i = q->front; i != q->rear; i = (i + 1) % BUFFER_SIZE)
 	{
-		printf("%d ", q->data[i]);
+		if (c == 0)
+		{
+			printf("%d", q->data[i]);
+			c++;
+		}
+		else
+		{
+			printf(",%d", q->data[i]);
+		}
 	}
-	printf("%d ", q->data[i]);
-	printf("\n");
-
+	printf(",%d\n", q->data[i]);
 }
 
 //‚µ‚å‚«‚©
